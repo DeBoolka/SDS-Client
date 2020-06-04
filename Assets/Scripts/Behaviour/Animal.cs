@@ -15,18 +15,18 @@ public class Animal : LivingEntity {
     public Color femaleColour;
 
     // Settings:
-    float timeBetweenActionChoices = 1;
-    float moveSpeed = 1.5f;
-    float timeToDeathByHunger = 200;
-    float timeToDeathByThirst = 200;
+    protected float timeBetweenActionChoices = 1;
+    protected float moveSpeed = 1.5f;
+    protected float timeToDeathByHunger = 200;
+    protected float timeToDeathByThirst = 200;
 
-    float drinkDuration = 6;
-    float eatDuration = 10;
+    protected float drinkDuration = 6;
+    protected float eatDuration = 10;
 
-    float criticalPercent = 0.7f;
+    protected float criticalPercent = 0.7f;
 
     // Visual settings:
-    float moveArcHeight = .2f;
+    protected float moveArcHeight = .2f;
 
     // State:
     [Header ("State")]
@@ -37,21 +37,21 @@ public class Animal : LivingEntity {
     protected Coord waterTarget;
 
     // Move data:
-    bool animatingMovement;
-    Coord moveFromCoord;
-    Coord moveTargetCoord;
-    Vector3 moveStartPos;
-    Vector3 moveTargetPos;
-    float moveTime;
-    float moveSpeedFactor;
-    float moveArcHeightFactor;
-    Coord[] path;
-    int pathIndex;
+    protected bool animatingMovement;
+    protected Coord moveFromCoord;
+    protected Coord moveTargetCoord;
+    protected Vector3 moveStartPos;
+    protected Vector3 moveTargetPos;
+    protected float moveTime;
+    protected float moveSpeedFactor;
+    protected float moveArcHeightFactor;
+    protected Coord[] path;
+    protected int pathIndex;
 
     // Other
-    float lastActionChooseTime;
-    const float sqrtTwo = 1.4142f;
-    const float oneOverSqrtTwo = 1 / sqrtTwo;
+    protected float lastActionChooseTime;
+    protected const float sqrtTwo = 1.4142f;
+    protected const float oneOverSqrtTwo = 1 / sqrtTwo;
 
     public override void Init (Coord coord) {
         base.Init (coord);
@@ -199,7 +199,7 @@ public class Animal : LivingEntity {
         if (currentAction == CreatureAction.Eating) {
             if (foodTarget && hunger > 0) {
                 float eatAmount = Mathf.Min (hunger, Time.deltaTime * 1 / eatDuration);
-                eatAmount = ((Plant) foodTarget).Consume (eatAmount);
+                eatAmount = foodTarget.Consume(eatAmount);
                 hunger -= eatAmount;
             }
         } else if (currentAction == CreatureAction.Drinking) {

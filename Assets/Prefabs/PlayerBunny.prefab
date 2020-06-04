@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2589637962258072678}
-  - component: {fileID: 3874918950189636065}
+  - component: {fileID: -3389405442157502221}
   m_Layer: 0
-  m_Name: Bunny
+  m_Name: PlayerBunny
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3874918950189636065
+--- !u!114 &-3389405442157502221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,12 +41,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7990116638631473043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa81e76bbb0534ab4a7eac5974e8565f, type: 3}
+  m_Script: {fileID: 11500000, guid: 836287f93c1b45a78a23937f39306bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   colourMaterialIndex: 2
   species: 4
-  material: {fileID: 2100000, guid: d186dafd38200421eb50a2e856c4a1fc, type: 2}
+  material: {fileID: 2100000, guid: fe1ab9b50cc1245aca5c7b93acf666ae, type: 2}
   coord:
     x: 0
     y: 0
@@ -56,8 +56,8 @@ MonoBehaviour:
     y: 0
   diet: 2
   currentAction: 0
-  maleColour: {r: 0.3584906, g: 0.2330951, b: 0.13020648, a: 0}
-  femaleColour: {r: 0.6509434, g: 0.45010933, b: 0.3224012, a: 0}
+  maleColour: {r: 0.5943396, g: 0.17350478, b: 0.053266272, a: 0}
+  femaleColour: {r: 1, g: 1, b: 1, a: 0}
   hunger: 0
   thirst: 0
 --- !u!1001 &322534139445717557

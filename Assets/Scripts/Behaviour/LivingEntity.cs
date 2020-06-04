@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
 public class LivingEntity : MonoBehaviour {
+    
+    float amountRemaining = 1;
+    const float consumeSpeed = 8;
 
     public int colourMaterialIndex;
     public Species species;
@@ -28,6 +31,19 @@ public class LivingEntity : MonoBehaviour {
                 break;
             }
         }
+    }
+    
+    public float Consume (float amount) {
+        float amountConsumed = Mathf.Max (0, Mathf.Min (amountRemaining, amount));
+        amountRemaining -= amount * consumeSpeed;
+
+        transform.localScale = Vector3.one * amountRemaining;
+
+        if (amountRemaining <= 0) {
+            Die (CauseOfDeath.Eaten);
+        }
+
+        return amountConsumed;
     }
 
     protected virtual void Die (CauseOfDeath cause) {
